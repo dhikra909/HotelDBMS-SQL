@@ -6,17 +6,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class HotelDBMS {
-	public static boolean addingHotelsTable() {
+public class Employees {
+
+	public static boolean addingEmployeesTable() {
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 		String user = "root";
 		String pass = "root";
-		String sqlDB = "CREATE TABLE Hotels " 
+		String sqlDB = "CREATE TABLE Employees " 
 		+ "(id INTEGER , " 
-				+ " hotel_name VARCHAR(20) not NULL, "
-				+ " hotel_location VARCHAR(20), " 
-				+ " created_date date not NULL, "
-				+" updated_date date,"
+				+ " employee_type_id INTEGER  REFERENCES  Employee_Type(id), "
+				+ " room_id  INTEGER  REFERENCES  Hotels(id), "
+				+" created_date date not NULL,"
+				+" updated_date date ,"
 				+" is_Active BIT not NULL, "
 				+ " PRIMARY KEY ( id ))";
 		Connection conn = null;
@@ -39,16 +40,6 @@ public class HotelDBMS {
 			System.err.println(ex);
 		}
 		return false;
-	}
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 }

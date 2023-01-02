@@ -6,4 +6,5 @@
  *
  */
 module HotelDBMS {
+	requires java.sql;
 }
