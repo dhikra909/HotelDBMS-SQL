@@ -4,27 +4,27 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 		// TODO Auto-generated method stub
 		HotelDBMS hotal = new HotelDBMS();
-	//	hotal.addingHotelsTable();
+//		hotal.addingHotelsTable();
 		
 		
 		Room_Type Room = new Room_Type();
-	//	Room.addingRoom_Type();
+//		Room.addingRoom_Type();
 
 		Rooms Rooms = new Rooms();
-		//Rooms.addingRooms_Type();
+//		Rooms.addingRooms_Type();
 
 		
 		Guests Guests1 = new Guests();
 //		Guests1.addingGuests_Type();
 		
 		Employee_Type Employee= new Employee_Type();
-	//	Employee.addingEmployeeTable();
+//		Employee.addingEmployeeTable();
 		
 		Employees Employees = new Employees();
-	//	Employees.addingEmployeesTable();
+//		Employees.addingEmployeesTable();
 		
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Select one of the options:");
@@ -37,10 +37,10 @@ public class Main {
 		
 			switch(select) {
 			case 1:
-				hotal.InsertIntoTable(10000);
+				HotelDBMS.InsertIntoTable(10000);
 				break;
 			case 2:
-				hotal.InsertIntoTable1();
+				hotal.InsertIntoTable(1);
 				break;
 			case 3:	
 		

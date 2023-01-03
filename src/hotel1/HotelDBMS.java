@@ -64,99 +64,37 @@ public class HotelDBMS {
 		return false;
 	}
 
-	public static void InsertIntoTable(int numOfRows) {
+	public static void InsertIntoTable(int insert) throws Throwable {
 
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 		String user = "root";
 		String pass = "root";
-
-		String sql = "INSERT INTO Hotels (id, hotel_name, hotel_location,created_date,updated_date,is_Active) VALUES (?, ?, ?,?, ?, ?)";
-		Connection con = null;
-		PreparedStatement pstmt = null;
-
-//		Connection conn = null;
-		try {
-			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
-			// Registering drivers
-			DriverManager.registerDriver(driver);
-			// Reference to connection interface
-			con = DriverManager.getConnection(url, user, pass);
-			pstmt = con.prepareStatement(sql);
-			for (int i = 1; i < numOfRows; i++) {
-				Random rn = new Random();
-				Integer numberToAdd = rn.nextInt(100);
-				String stringToAdd = "dhikra" + numberToAdd;
-				boolean boolToAdd = true;
-				String created_date = "2000-10-10";
-				String Updated_date = "2001-11-11";
-				// int id = 0;
-
-				pstmt.setInt(1, numOfRows);
-				pstmt.setString(2, stringToAdd);
-				pstmt.setString(3, stringToAdd);
-				pstmt.setString(4, created_date);
-				pstmt.setString(5, Updated_date);
-				pstmt.setBoolean(6, boolToAdd);
-				pstmt.executeUpdate();
-			}
-
-			System.out.println(numOfRows + " rows inserted successfully!");
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-
-	public static void InsertIntoTable1() {
-
-		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
-		String user = "root";
-		String pass = "root";
-
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("enter id");
-		Integer id = scanner.nextInt();
-
-		System.out.println("enter name");
-		String name = scanner.next();
-
-		System.out.println("enter location");
-		String location = scanner.next();
-
-		System.out.println("enter created date");
-		String created_date = scanner.next();
-
-		System.out.println("updated_date");
-		String updated_date = scanner.next();
-
-		System.out.println("is_Active");
-		Boolean is_Active = scanner.nextBoolean();
-
-		String sql = "insert into Hotels values(" + id + ",'" + name + "','" + location + "','" + created_date + "','"
-				+ updated_date + "'," + is_Active + ")";
-		Connection con = null;
-
-//			Connection conn = null;
-		try {
-			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
-			// Registering drivers
-			DriverManager.registerDriver(driver);
-			// Reference to connection interface
-			con = DriverManager.getConnection(url, user, pass);
-
-			Statement st = (Statement) con.createStatement();
-
+        Scanner sa=new Scanner(System.in);
+		String hotel_name = "Oman";
+		String hotel_location = "Muscat";
+		String created_date = "2022-12-15";
+		String updated_date = "2023-11-11";
+		boolean is_Active = true;
+		Random rn = new Random();
+		Integer numberToAdd = rn.nextInt(100);
+		for (int i = 0; i <= insert; i++) {
+			String sql = "insert into Hotels values (" + i + numberToAdd + ", '" + hotel_name + i + "', '"
+					+ hotel_location + i + "', '" + created_date + "', '" + updated_date + "', " + is_Active + ")";
+			Connection con = null;
 			try {
-				st.executeUpdate(sql);
-				System.out.println("Inserted Successfully");
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				Driver driver = (Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+				DriverManager.registerDriver(driver);
+				con = DriverManager.getConnection(url, user, pass);
+				Statement st = (Statement) con.createStatement();
+				int m = st.executeUpdate(sql);
+				if (m >= 0)
+					System.out.println("insert data successfully");
+				else
+					System.out.println("faild inserted ");
+				con.close();
+			} catch (Exception ex) {
+				System.err.println(ex);
 			}
-			con.close();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			
-			
-		}
-	}
+		}}
+	
 }
