@@ -81,9 +81,12 @@ public class HotelDBMS {
 			String sql = "insert into Hotels values (" + i + numberToAdd + ", '" + hotel_name + i + "', '"
 					+ hotel_location + i + "', '" + created_date + "', '" + updated_date + "', " + is_Active + ")";
 			Connection con = null;
+			
 			try {
+				//load the JDBC Driver
 				Driver driver = (Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 				DriverManager.registerDriver(driver);
+				//get connected to the db according the parameters
 				con = DriverManager.getConnection(url, user, pass);
 				Statement st = (Statement) con.createStatement();
 				int m = st.executeUpdate(sql);
@@ -96,5 +99,56 @@ public class HotelDBMS {
 				System.err.println(ex);
 			}
 		}}
+	
+	
+	public static void readFromTable() {
+		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
+		// Username and password to access DB
+		// Custom initialization
+		String user = "root";
+		String pass = "root";
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter How many you want to read hotels from table: ");
+		Integer numberOfHotels = scanner.nextInt();
+		String sql2 = "SELECT * FROM hotels";
+		Connection con1 = null;
+		try {
+			Driver driver = (Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+			// Registering drivers
+			DriverManager.registerDriver(driver);
+			// Reference to connection interface
+			con1 = DriverManager.getConnection(url, user, pass);
+			// Creating a statement
+			Statement st = con1.createStatement();
+			ResultSet resultSet = st.executeQuery(sql2);
+			// System.out.println(resultSet);
+			while (resultSet.next()) {
+				Integer id = resultSet.getInt("id");
+				String hotel_name = resultSet.getString("hotel_name");
+				String hotel_location = resultSet.getString("hotel_location");
+				Date created_date = resultSet.getDate("created_date");
+				Date updated_date = resultSet.getDate("created_date");
+				Integer is_Active = resultSet.getInt("is_Active");
+				System.out.println(id + ", " + hotel_name + ", " + hotel_location + ", " + created_date + " ,"
+						+ updated_date + ", " + is_Active);
+			}
+		}
+		// Catch block to handle exceptions
+		catch (Exception ex) {
+			// Display message when exceptions occurs
+			System.err.println(ex);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
