@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) throws Throwable {
+
 		// TODO Auto-generated method stub
 		HotelDBMS hotal = new HotelDBMS();
 //		hotal.addingHotelsTable();
@@ -31,9 +32,8 @@ public class Main {
 			System.out.println("1. Insert 10,000 hotels");
 			System.out.println("2. Insert 1 hote");
 			System.out.println("3. Print 10 hotels");
-			System.out.println("4. Print 10 hotels");
-			System.out.println("5. Make first 10 hotels 'is_Active' = false");
-			System.out.println("6. Print hotel information by user input");
+			System.out.println("4. Make first 10 hotels 'is_Active' = false");
+			System.out.println("5. Print hotel information by user input");
 			int select = sc.nextInt();
 		
 			switch(select) {
@@ -44,15 +44,22 @@ public class Main {
 				hotal.InsertIntoTable(1);
 				break;
 			case 3:	
-				HotelDBMS.readFromTable();
+				//System.out.println("Enter How many you want to read hotels from table: ");
+				//Integer numberOfHotels = sc.nextInt();
+				//HotelDBMS.readFromTable(numberOfHotels);
+				HotelDBMS.InsertIntoTable(10);
 				break;
 			case 4:	
-				
+				HotelDBMS.updateById();
+				HotelDBMS.updateToTrue();
 				break;
 			case 5:	
-				
+				System.out.println("Enter How many you want to read hotels from table: ");
+				Integer numberOfHotels = sc.nextInt();
+				HotelDBMS.readFromTable(numberOfHotels);
 				break;
 			
+
 			}		
 		
 		
