@@ -33,7 +33,8 @@ public class Main {
 			System.out.println("2. Insert 1 hote");
 			System.out.println("3. Print 10 hotels");
 			System.out.println("4. Make first 10 hotels 'is_Active' = false");
-			System.out.println("5. Print hotel information by user input");
+			System.out.println("5. Make first 10 hotels 'is_Active' = True");
+			System.out.println("6. Print hotel information by user input");
 			int select = sc.nextInt();
 		
 			switch(select) {
@@ -51,9 +52,12 @@ public class Main {
 				break;
 			case 4:	
 				HotelDBMS.updateById();
-				HotelDBMS.updateToTrue();
+				
 				break;
 			case 5:	
+				HotelDBMS.updateToTrue();
+				break;
+			case 6:	
 				System.out.println("Enter How many you want to read hotels from table: ");
 				Integer numberOfHotels = sc.nextInt();
 				HotelDBMS.readFromTable(numberOfHotels);
