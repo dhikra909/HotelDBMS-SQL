@@ -81,6 +81,7 @@ public class HotelDBMS {
 		for (int i = 0; i <= insert; i++) {
 			String sql = "insert into Hotels values (" + i + numberToAdd + ", '" + hotel_name + i + "', '"
 					+ hotel_location + i + "', '" + created_date + "', '" + updated_date + "', " + is_Active + ")";
+	
 			Connection con = null;
 			
 			try {
@@ -128,7 +129,7 @@ public class HotelDBMS {
 				String hotel_name = resultSet.getString("hotel_name");
 				String hotel_location = resultSet.getString("hotel_location");
 				Date created_date = resultSet.getDate("created_date");
-				Date updated_date = resultSet.getDate("created_date");
+				Date updated_date = resultSet.getDate("updated_date");
 				Integer is_Active = resultSet.getInt("is_Active");
 				System.out.println(id + ", " + hotel_name + ", " + hotel_location + ", " + created_date + " ,"
 						+ updated_date + ", " + is_Active);

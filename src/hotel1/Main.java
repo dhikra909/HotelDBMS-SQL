@@ -9,7 +9,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		HotelDBMS hotal = new HotelDBMS();
 //		hotal.addingHotelsTable();
-		
+//		
 		
 		Room_Type Room = new Room_Type();
 //		Room.addingRoom_Type();
@@ -35,6 +35,12 @@ public class Main {
 			System.out.println("4. Make first 10 hotels 'is_Active' = false");
 			System.out.println("5. Make first 10 hotels 'is_Active' = True");
 			System.out.println("6. Print hotel information by user input");
+			System.out.println("7.Insert 10,000 Employee");
+			System.out.println("8. Print 1 Employee");
+			System.out.println("9. Print 10 Employee");
+			System.out.println("10. Make first 10 Employee 'is_Active' = false");
+			System.out.println("11. Make first 10 Employee 'is_Active' = True");
+			System.out.println("12. Print Employee information by user input");
 			int select = sc.nextInt();
 		
 			switch(select) {
@@ -62,7 +68,34 @@ public class Main {
 				Integer numberOfHotels = sc.nextInt();
 				HotelDBMS.readFromTable(numberOfHotels);
 				break;
-			
+			case 7:	
+				Employee_Type.InsertIntoTableEmployee(10000);
+				
+				break;
+			case 8:	
+				Employee_Type.InsertIntoTableEmployee(1);
+				
+				break;
+
+			case 9:	
+				Employee_Type.InsertIntoTableEmployee(10);
+				
+				break;
+
+			case 10:	
+				Employee_Type.getByIdEmployee();
+				
+				break;
+			case 11:	
+				Employee_Type.updateToTrueEmployee();;
+				
+				break;
+			case 12:	
+				System.out.println("Enter How many you want to read Employee from table: ");
+				Integer numberOfEmployee1 = sc.nextInt();
+				Employee_Type.readFromTableEmployee(numberOfEmployee1);
+				
+				break;
 
 			}		
 		
