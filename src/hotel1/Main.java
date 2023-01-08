@@ -41,6 +41,10 @@ public class Main {
 			System.out.println("10. Make first 10 Employee 'is_Active' = false");
 			System.out.println("11. Make first 10 Employee 'is_Active' = True");
 			System.out.println("12. Print Employee information by user input");
+			System.out.println("13.Insert 10,000 room");
+			System.out.println("14.Insert 10,000 rooms");
+			System.out.println("15.Insert 10,000 Guests");
+			System.out.println("16.Insert 10,000 Employees");
 			int select = sc.nextInt();
 		
 			switch(select) {
@@ -95,6 +99,18 @@ public class Main {
 				Integer numberOfEmployee1 = sc.nextInt();
 				Employee_Type.readFromTableEmployee(numberOfEmployee1);
 				
+				break;
+			case 13:	
+				Room_Type.InsertIntoTableroom(10);
+				break;
+			case 14:	
+				Rooms.InsertIntoTablerooms(10);
+				break;
+			case 15:	
+				Room_Type.InsertIntoTableroom(10);
+				break;
+			case 16:	
+				Room_Type.InsertIntoTableroom(10);
 				break;
 
 			}		

@@ -49,15 +49,15 @@ public class Rooms {
 		String user = "root";
 		String pass = "root";
         Scanner sa=new Scanner(System.in);
-		String room_name = "d";
+		String room_type_id = "d";
 		String created_date = "2021-08-17";
 		String updated_date = "2022-12-14";
 		boolean is_Active = true;
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 		for (int i = 0; i <= insert; i++) {
-			String sql = "insert into Hotels values (" + i + numberToAdd + ", '" + room_name + i + "', '"
-					 + i + "', '" + created_date + "', '" + updated_date + "', " + is_Active + ")";
+			String sql = "insert into rooms values (" + i + numberToAdd + ", '" + room_type_id + i + "', '"
+					+ created_date + "', '" + updated_date + "', " + is_Active + ")";
 			Connection con = null;
 			
 			try {
