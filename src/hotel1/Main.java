@@ -16,7 +16,8 @@ public class Main {
 
 		Rooms Rooms = new Rooms();
 //		Rooms.addingRooms_Type();
-
+		
+		
 		
 		Guests Guests1 = new Guests();
 //		Guests1.addingGuests_Type();
@@ -41,10 +42,11 @@ public class Main {
 			System.out.println("10. Make first 10 Employee 'is_Active' = false");
 			System.out.println("11. Make first 10 Employee 'is_Active' = True");
 			System.out.println("12. Print Employee information by user input");
-			System.out.println("13.Insert 10,000 room");
+			System.out.println("13.Insert 10,000 Room_Type");
 			System.out.println("14.Insert 10,000 rooms");
 			System.out.println("15.Insert 10,000 Guests");
-			System.out.println("16.Insert 10,000 Employees");
+
+
 			int select = sc.nextInt();
 		
 			switch(select) {
@@ -101,16 +103,13 @@ public class Main {
 				
 				break;
 			case 13:	
-				Room_Type.InsertIntoTableroom(10);
+				Room_Type.InsertIntoTableRoom_Type(10);
 				break;
 			case 14:	
-				Rooms.InsertIntoTablerooms(10);
+				Rooms.InsertIntoTableRooms_Type(4);
 				break;
 			case 15:	
-				Room_Type.InsertIntoTableroom(10);
-				break;
-			case 16:	
-				Room_Type.InsertIntoTableroom(10);
+//				Room_Type.InsertIntoTableRooms_Type(10);
 				break;
 
 			}		

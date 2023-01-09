@@ -15,7 +15,7 @@ public class Room_Type {
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 		String user = "root";
 		String pass = "root";
-		String sqlDB = "CREATE TABLE Room " + "(id INTEGER , " + " room_type_name  VARCHAR(20) not NULL, "
+		String sqlDB = "CREATE TABLE Room_Type " + "(id INTEGER , " + " room_type_name  VARCHAR(20) not NULL, "
 				+ " created_date date, " + " updated_date date , "+" is_Active Boolean not NULL, " + " PRIMARY KEY ( id ))";
 		
 
@@ -47,7 +47,7 @@ public class Room_Type {
 
 }	
 	
-	public static void InsertIntoTableroom(int insert) throws Throwable {
+	public static void InsertIntoTableRoom_Type(int insert) throws Throwable {
 
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 		String user = "root";
@@ -60,7 +60,7 @@ public class Room_Type {
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 		for (int i = 0; i <= insert; i++) {
-			String sql = "insert into room values (" + i + numberToAdd + ", '" + room_type_name + i + "', '"
+			String sql = "insert into Room_Type values (" + i + numberToAdd + ", '" + room_type_name + i + "', '"
 					  + created_date + "', '" + updated_date + "', " + is_Active + ")";
 			Connection con = null;
 			
