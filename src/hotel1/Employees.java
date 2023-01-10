@@ -19,7 +19,7 @@ public class Employees {
 		String sqlDB = "CREATE TABLE Employees " 
 		+ "(id INTEGER , " 
 				+ " employees_type_id INTEGER  REFERENCES  Employee_Type(id), "
-				+ " room_id  INTEGER  REFERENCES  Hotels(id), "
+				+ " room_id  INTEGER  REFERENCES  Rooms(id), "
 				+" created_date date not NULL,"
 				+" updated_date date ,"
 				+" is_Active BIT not NULL, "
@@ -64,9 +64,9 @@ public class Employees {
 		int roomID = 2;
 		
 		
-		for (int i = 1; i <= 2; i++) {
+		for (int i = 0; i <= 20; i++) {
 		
-			String sql = "insert into Employees values (" + i + ", " + empId  + ", "+roomID+ ", '"
+			String sql = "insert into Employees values (" + i + ", " + empId  + ", "+roomID + ", '"
 					 + created_date + "', '" + updated_date + "', " + is_Active + ")";
 System.out.println(sql);
 			Connection con = null;

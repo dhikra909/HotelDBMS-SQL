@@ -44,14 +44,14 @@ public class Main {
 			System.out.println("12. Print Employee information by user input");
 			System.out.println("13.Insert 10,000 Room_Type");
 			System.out.println("14.Insert 10,000 rooms");
-			System.out.println("15.Insert 10,000 Guests");
-			System.out.println("16.Insert 10,000 Employees");
+			System.out.println("15.Insert 1000 Guests");
+			System.out.println("16.Insert 20 Employees");
 
 			int select = sc.nextInt();
 		
 			switch(select) {
 			case 1:
-				HotelDBMS.InsertIntoTable(10000);
+				HotelDBMS.InsertIntoTable(100);
 				break;
 			case 2:
 				hotal.InsertIntoTable(1);
@@ -75,7 +75,7 @@ public class Main {
 				HotelDBMS.readFromTable(numberOfHotels);
 				break;
 			case 7:	
-				Employee_Type.InsertIntoTableEmployee(10000);
+				Employee_Type.InsertIntoTableEmployee(100);
 				
 				break;
 			case 8:	
@@ -109,10 +109,10 @@ public class Main {
 				Rooms.InsertIntoTableRooms(4);
 				break;
 			case 15:	
-				Guests.InsertIntoTableGuests_Type(4);
+				Guests.InsertIntoTableGuests_Type(1000);
 				break;
 			case 16:	
-				Employees.InsertIntoTableEmployees(5);
+				Employees.InsertIntoTableEmployees(20);
 				break;
 
 			}		
