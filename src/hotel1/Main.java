@@ -45,7 +45,7 @@ public class Main {
 			System.out.println("13.Insert 10,000 Room_Type");
 			System.out.println("14.Insert 10,000 rooms");
 			System.out.println("15.Insert 10,000 Guests");
-
+			System.out.println("16.Insert 10,000 Employees");
 
 			int select = sc.nextInt();
 		
@@ -106,10 +106,13 @@ public class Main {
 				Room_Type.InsertIntoTableRoom_Type(10);
 				break;
 			case 14:	
-				Rooms.InsertIntoTableRooms_Type(4);
+				Rooms.InsertIntoTableRooms(4);
 				break;
 			case 15:	
-//				Room_Type.InsertIntoTableRooms_Type(10);
+				Guests.InsertIntoTableGuests_Type(4);
+				break;
+			case 16:	
+				Employees.InsertIntoTableEmployees(5);
 				break;
 
 			}		

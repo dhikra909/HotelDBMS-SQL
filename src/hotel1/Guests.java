@@ -5,6 +5,8 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Guests {
 
@@ -44,4 +46,59 @@ public class Guests {
 		}
 		return false;
 	}
+	
+	public static void InsertIntoTableGuests_Type(int insert) throws Throwable {
+
+		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
+		String user = "root";
+		String pass = "root";
+	    Scanner sa=new Scanner(System.in);
+	    String guest_phone="77";
+	    Integer guest_accompanying_members=6;
+	    Integer guest_payment_amount=3;
+		String created_date = "2022-12-15";
+		String updated_date = "2023-11-11";
+		boolean is_Active = true;
+		Random rn = new Random();
+		Integer numberToAdd = rn.nextInt(100);
+		String guest_name = "Oman" +numberToAdd ;
+		int hotelId = 90;
+		int roomID = 2;
+		
+		
+		for (int i = 1; i <= 2; i++) {
+		
+			String sql = "insert into Guests values (" + i + ", " +guest_name + ", "+guest_phone+ ", "+guest_accompanying_members+ ", "+guest_payment_amount+ ", "+ hotelId  + ", "+roomID+ ", '"
+					 + created_date + "', '" + updated_date + "', " + is_Active + ")";
+System.out.println(sql);
+			Connection con = null;
+			
+			try {
+				//load the JDBC Driver
+				Driver driver = (Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+				DriverManager.registerDriver(driver);
+				//get connected to the db according the parameters
+				con = DriverManager.getConnection(url, user, pass);
+				Statement st = (Statement) con.createStatement();
+				int m = st.executeUpdate(sql);
+				if (m >= 0)
+					System.out.println("insert data successfully");
+				else
+					System.out.println("faild inserted ");
+				con.close();
+			} catch (Exception ex) {
+				System.err.println(ex);
+			}
+		}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
