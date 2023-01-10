@@ -20,7 +20,7 @@ public class Main {
 		
 		
 		Guests Guests1 = new Guests();
-//		Guests1.addingGuests_Type();
+		Guests1.addingGuests_Type();
 		
 		Employee_Type Employee= new Employee_Type();
 //		Employee.addingEmployeeTable();

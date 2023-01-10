@@ -14,7 +14,7 @@ public class Guests {
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 		String user = "root";
 		String pass = "root";
-		String sqlDB = "CREATE TABLE Guests "
+		String sqlDB = "CREATE TABLE Guests_Type "
 		        + "(id INTEGER , " 
 				+ " guest_name  VARCHAR(20) not NULL, "
 				+ " guest_phone VARCHAR (20) not NULL, " 
@@ -68,7 +68,7 @@ public class Guests {
 		
 		for (int i = 1; i <= 1000; i++) {
 		
-			String sql = "insert into Guests values (" + i + ", " +guest_name + ", "+guest_phone+ ", "+guest_accompanying_members+ ", "+guest_payment_amount+ ", "+ hotelId  + ", "+roomID+ ", '"
+			String sql = "insert into Guests_Type values (" + i + ", " +guest_name + ", "+guest_phone+ ", "+guest_accompanying_members+ ", "+guest_payment_amount+ ", "+ hotelId  + ", "+roomID+ ", '"
 					 + created_date + "', '" + updated_date + "', " + is_Active + ")";
 System.out.println(sql);
 			Connection con = null;

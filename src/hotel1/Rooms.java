@@ -14,9 +14,9 @@ public class Rooms {
 		String url = "jdbc:mysql://localhost:3306/HotelDBMS";
 		String user = "root";
 		String pass = "root";
-		String sqlDB = "CREATE TABLE Rooms "
+		String sqlDB = "CREATE TABLE Rooms_Type "
 		+"(id INTEGER , " 
-		+ " room_type_id  INTEGER  REFERENCES Rooms_Type_id(id), "
+		+ " room_type_id  VARCHAR(20), "
 		+ " hotel_id INTEGER  REFERENCES Hotels(id)," 
 		+ " created_date date not null ," 
 		+ " updated_date date,  "
@@ -57,14 +57,14 @@ public class Rooms {
 		boolean is_Active = true;
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
-		String room_type_id = "oman" +numberToAdd ;
+		
 		int hotalID = 90;
 		int roomID = 2;
 		
 		
-		for (int i = 1; i <= 2; i++) {
+		for (int i = 1; i <= 100; i++) {
 		
-			String sql = "insert into Rooms values (" + i + ", " + roomID  + ", "+hotalID+ ", '"
+			String sql = "insert into Rooms_Type values (" + i + ", " + roomID  + ", "+hotalID+ ", '"
 					 + created_date + "', '" + updated_date + "', " + is_Active + ")";
 System.out.println(sql);
 			Connection con = null;
