@@ -57,7 +57,7 @@ public class Rooms {
 		boolean is_Active = true;
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
-		String room_type_id = "STANDARD" +numberToAdd ;
+		String room_type_id = "oman" +numberToAdd ;
 		int hotalID = 90;
 		int roomID = 2;
 		
